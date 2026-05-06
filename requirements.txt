@@ -7,6 +7,9 @@ langchain-openai>=0.1.0
 # OpenAI
 openai>=1.30.0
 
+# Google PaLM
+google-generativeai>=0.17.0
+
 # Tavily Search Tool
 tavily-python>=0.3.0
 
@@ -37,7 +40,7 @@ tenacity>=8.2.0
 orjson>=3.9.0
 
 # Typing support (helps in bigger projects)
-pydantic>=2.5.0
+pydantic<=2.0.0
 
 # Optional (for advanced parsing / HTML cleanup)
 html5lib>=1.1
