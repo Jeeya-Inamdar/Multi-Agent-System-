@@ -1,4 +1,5 @@
 from agents import build_reader_agent , build_search_agent , writer_chain , critic_chain
+from langchain_core.messages import HumanMessage
 
 def run_research_pipeline(topic : str) -> dict:
 
@@ -11,7 +12,7 @@ def run_research_pipeline(topic : str) -> dict:
 
     search_agent = build_search_agent()
     search_result = search_agent.invoke({
-        "messages" : [("user", f"Find recent, reliable and detailed information about: {topic}")]
+        "messages" : [HumanMessage(content=f"Find recent, reliable and detailed information about: {topic}")]
     })
     state["search_results"] = search_result['messages'][-1].content
 
@@ -24,7 +25,7 @@ def run_research_pipeline(topic : str) -> dict:
 
     reader_agent = build_reader_agent()
     reader_result = reader_agent.invoke({
-        "messages": [("user",
+        "messages": [HumanMessage(content=
             f"Based on the following search results about '{topic}', "
             f"pick the most relevant URL and scrape it for deeper content.\n\n"
             f"Search Results:\n{state['search_results'][:800]}"

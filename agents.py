@@ -1,5 +1,5 @@
 from langchain.agents import create_agent
-from langchain_community.chat_models.google_palm import ChatGooglePalm
+from langchain_nvidia_ai_endpoints import ChatNVIDIA
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from tools import web_search, scrape_url
@@ -9,8 +9,8 @@ import os
 load_dotenv()
 
 # model setup
-google_api_key = os.getenv("GOOGLE_API_KEY")
-llm = ChatGooglePalm(google_api_key=google_api_key, temperature=0)
+nvidia_api_key = os.getenv("NVIDIA_API_KEY")
+llm = ChatNVIDIA(model="moonshotai/kimi-k2.6", nvidia_api_key=nvidia_api_key, temperature=0)
 
 
 #1st agent 
