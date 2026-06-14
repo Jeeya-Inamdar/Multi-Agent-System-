@@ -1,5 +1,4 @@
 # InsightFlow: A Multi-Agent Research System
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/Jeeya-Inamdar/Multi-Agent-System-)
 
 InsightFlow is a sophisticated, multi-agent system designed to automate the entire research process. It takes a user-provided topic, conducts web research, scrapes relevant content, synthesizes the information into a detailed report, and finally, provides a critical evaluation of the generated report. The entire workflow is presented through a sleek, interactive web interface built with Streamlit.
 
